@@ -1,0 +1,41 @@
+# llm/models.yaml
+
+# Available models and their host/provider
+available_models:
+  gemini-2.5-flash:
+    provider: google_vertexai
+    temperature: 0.0
+  gemini-2.5-pro:
+    provider: google_vertexai
+    temperature: 0.0
+  o3-mini:
+    provider: openai # only allows temp of 1, optional reasoning_effort: high parameter
+    temperature: 1
+  o4-mini:
+    provider: openai # only allows temp of 1, optional reasoning_effort: high parameter
+    temperature: 1
+  gemini-1.0-pro-vision:
+    provider: google_vertexai
+    temperature: 0.2
+  gpt-4o:
+    provider: openai
+    temperature: 0.0
+  grok-3-mini:
+    provider: xai
+    temperature: 0.0
+  claude-3-5-haiku-20241022:
+    provider: anthropic
+    temperature: 0.0
+
+# Task-to-model mapping
+default:
+  model_name: gemini-2.5-flash
+
+event-search:
+  model_name: gemini-2.5-flash
+
+info-search:
+  model_name: grok-3-mini
+
+video-search:
+  model_name: gemini-2.5-pro
