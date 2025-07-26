@@ -43,6 +43,7 @@ def get_llm_for(task: str = "default", **overrides):
 
     assert provider is not None, f"No provider configured for model '{model_name}'"
 
+    # Initialize the model - most modern models have built-in web search
     if reasoning_effort:
         return init_chat_model(
             model_name,
